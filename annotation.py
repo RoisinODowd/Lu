@@ -1,6 +1,11 @@
 import sys
 
-tss = open("tissueSourceSite.txt", "r")
+if len(sys.argv) != 2:
+	sys.stderr.write("The proper usage of this proram is 'python annotation.py [CommonTumorsFile]'\n")
+	sys.exit()
+
+
+tss = open("../providedFiles/tissueSourceSite.txt", "r")
 common = open(sys.argv[1], "r")
 
 tlcSet = set()
