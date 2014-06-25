@@ -9,7 +9,7 @@ out = open(sys.argv[2], "w")
 next(gm)
 
 for line in gm:
-	twoDigClass = int(line.strip().split("\t")[0][13:])
+	twoDigClass = int(line.strip().split("\t")[0].split("-")[3])
 	if twoDigClass < 20 and twoDigClass >= 10:
 		out.write(line)
 
