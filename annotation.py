@@ -5,7 +5,7 @@ if len(sys.argv) != 2:
 	sys.exit()
 
 
-tss = open("../providedFiles/tissueSourceSite.txt", "r")
+tss = open("./providedFiles/tissueSourceSite.txt", "r")
 common = open(sys.argv[1], "r")
 
 tlcSet = set()
