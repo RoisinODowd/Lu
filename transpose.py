@@ -1,5 +1,9 @@
 import sys
 
+if len(sys.argv) != 3:
+	sys.stderr.write("The proper usage of this proram is 'python transpose.py [InputMatrix] [OutputMatrix]'\n")
+	sys.exit()
+
 in_file = open(sys.argv[1], "r")
 out_file = open(sys.argv[2], "w")
 first_line = in_file.readline().strip().split("\t")
