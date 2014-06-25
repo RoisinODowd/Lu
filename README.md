@@ -13,3 +13,5 @@ python transpose.py [InputMatrix] [OutputMatrix]
 ```
 python annotation.py [CommonTumors]
 ```
+
+All code written by Ritwik Gupta and Kevin Lu under the lab of Dr. Xinghua Lu at the Department of Biomedical Informatics, University of Pittsburgh.
