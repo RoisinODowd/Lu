@@ -40,9 +40,7 @@ while len(tcgaSet) != 0:
 			for tup in newNewList:
 				if mergedList[i][1] == tup[0]:
 					tup[1].update({temp})
-
-print newNewList
-
+					
 with open("tumorsAnnotated.txt", "w") as out:
 	for i in newNewList:
 		out.write(str(i[0] + "\t"))
