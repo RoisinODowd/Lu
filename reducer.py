@@ -22,4 +22,8 @@ commonSet = mutSet.intersection(expSet).intersection(cnaSet)
 with open(sys.argv[4], "w") as out:
 	#out.write(str(mutSet.intersection(expSet)))
 	while len(commonSet) > 0:
-		out.write(commonSet.pop() + "\n")
+		temp = commonSet.pop()
+		if temp == "Sample":
+			continue
+		else:
+			out.write(temp + "\n")
