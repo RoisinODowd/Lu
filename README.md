@@ -1,6 +1,6 @@
-Usage:
+#Usage:
 
-_reducer.py_: used to find all common tumors between mutation, expression, and CNA data and writes the common tumors to OutputFile.
+##**reducer.py**: used to find all common tumors between mutation, expression, and CNA data and writes the common tumors to OutputFile.
 ```
 python reducer.py [MUTATIONS] [EXPRESSIONS (IlluminaHiSeq)] [CNA] [OutputFile]
 ```
