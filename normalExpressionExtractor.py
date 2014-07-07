@@ -10,11 +10,14 @@ out.write(header)
 matDict = {}
 
 for matLine in matrix:
+	#print matLine
+	#break
 	matDict[str(matLine[:matLine.find("\t")])] = str(matLine[matLine.find("\t"):])
 
+#print matDict.keys()
 for line in normal:
-	if line.strip() in matDict.keys():
-		out.write(line.strip() + matDict[line.strip()])
+	if line[:line.find("\t")] in matDict.keys():
+		out.write(line.strip() + matDict[str(matLine[:matLine.find("\t")])])
 
 normal.close()
 matrix.close()
