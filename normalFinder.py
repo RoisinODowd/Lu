@@ -6,7 +6,10 @@ if len(sys.argv) != 3:
 
 gm = open(sys.argv[1], "r")
 out = open(sys.argv[2], "w")
-next(gm)
+
+header = gm.readline()
+
+out.write(header)
 
 for line in gm:
 	twoDigClass = int(line.strip().split("\t")[0].split("-")[3])
