@@ -1,6 +1,6 @@
 #Usage:
 
-#####**reducer.py**: used to find all common tumors between mutation, expression, and CNA data and writes the common tumors to OutputFile.
+#####**reducer.py**: used to find all common tumors between transposed mutation, expression, and CNA data and writes the common tumors to OutputFile.
 ```
 python reducer.py [MUTATIONS] [EXPRESSIONS (IlluminaHiSeq)] [CNA] [OutputFile]
 ```
@@ -12,6 +12,11 @@ python transpose.py [InputMatrix] [OutputMatrix]
 #####**annotation.py**: takes in the tissueSourceSite.txt and CommonTumors outputted by reducer.py and outputs a file with cancer names and their corresponding TCGA tumor IDs
 ```
 python annotation.py [CommonTumors]
+```
+
+#####**cdfMaker.py**: takes in two transposed matrix files: NormalMatrix and a TumorMatrix, and outputs OutputFile, which is a matrix of the CDFs for each element
+```
+python cdfMaker.py [NormalMatrix] [TumorMatrix] [OutputFile]
 ```
 
 All code written by Ritwik Gupta and Kevin Lu under the lab of Dr. Xinghua Lu at the Department of Biomedical Informatics, University of Pittsburgh.
