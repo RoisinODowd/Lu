@@ -11,8 +11,7 @@ common = open(sys.argv[1], "r")
 tlcSet = set()
 tcgaSet = set()
 tumDict = {}
-mergedList = []
-newList = []
+checkList, newList, mergedList = [], [], []
 
 for codes in tss:
 	twoLetCode = {codes.split("\t")[0]}
@@ -22,27 +21,27 @@ for codes in tss:
 for i in range(0, len(mergedList)):
 	for j in range(i + 1, len(mergedList)):
 		if mergedList[i][1] == mergedList[j][1]:
-			temp =  (mergedList[i][1], mergedList[i][2].union(mergedList[j][2]))
+			temp =  (mergedList[i][1], mergedList[i][2].union(mergedList[j][2])) #local scope declaration
 			newList.append(temp)
-newNewList = []
+
 for i in newList:
-	if i not in newNewList:
-		newNewList.append(i)
+	if i not in checkList:
+		checkList.append(i)
 
 for row in common:
 	tcgaId = {row.strip()}
 	tcgaSet.update(tcgaId)
 
 while len(tcgaSet) != 0:
-	temp = tcgaSet.pop()
+	temp = tcgaSet.pop() #local scope declaration
 	for i in range(0, len(mergedList)):
 		if mergedList[i][0] == temp.split("-")[1]:
-			for tup in newNewList:
+			for tup in checkList:
 				if mergedList[i][1] == tup[0]:
 					tup[1].update({temp})
 					
 with open("tumorsAnnotated.txt", "w") as out:
-	for i in newNewList:
+	for i in checkList:
 		out.write(str(i[0] + "\t"))
 		tempStr = ""
 		while len(i[1]) != 0:
