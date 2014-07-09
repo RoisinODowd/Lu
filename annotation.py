@@ -1,7 +1,7 @@
 import sys
 
 if len(sys.argv) != 2:
-	sys.stderr.write("The proper usage of this proram is 'python annotation.py [CommonTumorsFile]'\n")
+	sys.stderr.write("The proper usage of this program is 'python annotation.py [CommonTumorsFile]'\n")
 	sys.exit()
 
 

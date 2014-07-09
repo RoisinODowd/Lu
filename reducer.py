@@ -1,7 +1,7 @@
 import sys
 
 if len(sys.argv) != 5:
-	sys.stderr.write("The proper usage of this proram is 'python reducer.py [MUTATIONS] [EXPRESSIONS (IlluminaHiSeq)] [CNA] [OutputFile]'\n")
+	sys.stderr.write("The proper usage of this program is 'python reducer.py [MUTATIONS] [EXPRESSIONS (IlluminaHiSeq)] [CNA] [OutputFile]'\n")
 	sys.exit()
 
 #1st argument: mutation

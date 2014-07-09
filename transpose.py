@@ -1,7 +1,7 @@
 import sys
 
 if len(sys.argv) != 3:
-	sys.stderr.write("The proper usage of this proram is 'python transpose.py [InputMatrix] [OutputMatrix]'\n")
+	sys.stderr.write("The proper usage of this program is 'python transpose.py [InputMatrix] [OutputMatrix]'\n")
 	sys.exit()
 
 in_file = open(sys.argv[1], "r")
