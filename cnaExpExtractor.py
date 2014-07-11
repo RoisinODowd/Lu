@@ -7,7 +7,7 @@ cnaComMatOut = open(sys.argv[4], "w")
 expComMatOut = open(sys.argv[5], "w")
 
 for line in cnaMatrixTrans:
-	for line2 comTumorList:
+	for line2 in comTumorList:
 		if line.split("\t")[0] == line2.strip():
 			cnaComMatOut.write(line)
 			
