@@ -6,12 +6,20 @@ comTumorList = open(sys.argv[3], "r")
 cnaComMatOut = open(sys.argv[4], "w")
 expComMatOut = open(sys.argv[5], "w")
 
+cnaDict = {}
+expDict = {}
+
 for line in cnaMatrixTrans:
-	for line2 in comTumorList:
-		if line.split("\t")[0] == line2.strip():
-			cnaComMatOut.write(line)
+	cnaDict[str(line.split("\t")[0])] = str(line.split("\t")[1:])
+for line in comTumorList:
+	if line.strip() in cnaDict:
+		cnaComMatOut.write(line.strip() + "\t" + cnaDict[str(line.strip())]
 			
 for line in expMatrixTrans:
-	for line2 in comTumorList:
-		if line.split("\t")[0] == line2.strip():
-			expComMatOut.write(line)
+	expDict[str(line.split("\t")[0])] = str(line.split("\t")[1:])
+for line in comTumorList:
+	if line.strip() in expDict:
+		expComMatOut.write(line.strip() + "\t" + expDict[str(line.strip())]
+		
+cnaComMatOut.close()
+expComMatOut.close()
