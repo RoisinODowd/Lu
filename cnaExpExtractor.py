@@ -12,6 +12,6 @@ for line in cnaMatrixTrans:
 			cnaComMatOut.write(line)
 			
 for line in expMatrixTrans:
-	for line2 comTumorList:
+	for line2 in comTumorList:
 		if line.split("\t")[0] == line2.strip():
 			expComMatOut.write(line)
