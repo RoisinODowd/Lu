@@ -63,3 +63,10 @@ with open(sys.argv[4], "w") as out:
 			continue
 		else:
 			out.write(temp + "\n")
+###
+# Closing files
+###
+mutFile.close()
+expFile.close()
+cnaFile.close()
+out.close()
