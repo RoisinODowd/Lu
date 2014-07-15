@@ -38,7 +38,7 @@ merge the different cancer names into one id. This is done via the
 set declared at mergedList[2]. newList contains tuples with the first
 element in the tuple being the cancer name and the second element being
 a set.
-#
+
 newList = [('Cancer Name', set())]
 """
 for i in range(0, len(mergedList)):
