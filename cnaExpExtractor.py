@@ -1,6 +1,13 @@
 ﻿import sys
 
 """
+Improper argument handling
+"""
+if len(sys.argv) != 6:
+	sys.stderr.write("The proper usage of this program is 'python cnaExpExtractor.py [CNA] [EXPRESSIONS] [CommonTumors] [OutputCNA] [OutputExpression]'\n")
+	sys.exit()
+
+"""
 Open five files, all tumor x gene, the first being the
 CNA matrix, the second the expression matrix, the third
 the commonTumors list, the fourth the output cnaCommons
