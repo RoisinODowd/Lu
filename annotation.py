@@ -25,7 +25,7 @@ codes are the second cluster in the TCGA ids in the expression,
 mutation, and CNA files. 
 
 mergedList = [['Two letter code', 'Cancer name', set()]]
-"""#
+"""
 for codes in tss:
 	twoLetCode = {codes.split("\t")[0]}
 	tlcSet.update(twoLetCode)
