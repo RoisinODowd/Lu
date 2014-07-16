@@ -68,7 +68,7 @@ for row in common:
 	tcgaSet.update(tcgaId)
 
 """
-Goes through each mergedList[1], the two letter code, and compares
+Goes through each mergedList[i], the two letter code, and compares
 it to each two letter code in tcgaSet. If the cancer name in both
 mergedList and checkList are the same, then the set in checkList is
 updated with the proper TCGA id for that cancer.
