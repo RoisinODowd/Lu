@@ -29,8 +29,8 @@ expDict = {}
 Read the header from the CNA matrix and the exp Matrix
 and output them to the common matrices.
 
-cnaHeader = 'Text\tText\tText...'
-expHeader = 'Text\tText\tText...'
+cnaHeader = 'Gene Symbol\tGene1\tGene2...'
+expHeader = 'sample\tGene1\tGene2...'
 """
 cnaHeader = cnaMatrixTrans.readline()
 expHeader = expMatrixTrans.readline()
