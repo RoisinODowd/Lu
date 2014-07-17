@@ -3,7 +3,7 @@ import sys
 """
 Improper argument handling
 """
-if len(sys.argv) != 3:
+if len(sys.argv) != 4:
 	sys.stderr.write("The proper usage of this program is 'python makeSuperset.py [BinaryCDFWithHeaders] [CNA] [OutputFile]'\n")
 	sys.exit()
 
