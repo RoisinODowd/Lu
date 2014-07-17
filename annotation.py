@@ -48,7 +48,9 @@ for i in range(0, len(mergedList)):
 			newList.append(temp)
 
 """
-Sanity check
+Sanity check.
+I actually have no idea what this is for or why we did this, but
+it works.
 
 checkList = [('Cancer name', set())]
 """
