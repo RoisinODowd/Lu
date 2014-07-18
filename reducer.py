@@ -12,10 +12,10 @@ Opens multiple files via the command line.
 The mutation matrix is the first argument, the expression the second,
 and the CNA the third. The first line in each file is skipped.
 """
-mutFile = open(sys.argv[1], "r")
+#mutFile = open(sys.argv[1], "r")
 expFile = open(sys.argv[2], "r")
 cnaFile = open(sys.argv[3], "r")
-next(mutFile)
+#next(mutFile)
 next(expFile)
 next(cnaFile)
 
@@ -27,8 +27,8 @@ mutList = ['Tumor1', 'Tumor2', ...]
 expList = ['Tumor1', 'Tumor2', ...]
 cnaList = ['Tumor1', 'Tumor2', ...]
 """
-for line in mutFile:
-	mutList.append(line.split("\t")[0])
+# for line in mutFile:
+# 	mutList.append(line.split("\t")[0])
 for line in expFile:
 	expList.append(line.split("\t")[0])
 for line in cnaFile:
@@ -41,7 +41,7 @@ mutSet = {'Tumor1', 'Tumor2', ...}
 expSet = {'Tumor1', 'Tumor2', ...}
 cnaSet = {'Tumor1', 'Tumor2', ...}
 """
-mutSet = set(mutList)
+#mutSet = set(mutList)
 expSet = set(expList)
 cnaSet = set(cnaList)
 
@@ -69,7 +69,7 @@ with open(sys.argv[4], "w") as out:
 """
 Closing files
 """
-mutFile.close()
+#mutFile.close()
 expFile.close()
 cnaFile.close()
 out.close()
