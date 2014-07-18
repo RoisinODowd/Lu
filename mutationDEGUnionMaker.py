@@ -2,6 +2,7 @@ import sys
 
 mutFile = open(sys.argv[1], "r")
 degFile = open(sys.argv[2], "r")
+out = open(sys.argv[3], "r")
 
 tumors = []
 outMatrix = []
@@ -52,3 +53,6 @@ for currLine in outMatrix:
 		else:
 			degValue = mutLookupDict[(tumorName, currentGene)]
 		currLine[g] = int(mutValue) | int(degValue)
+
+for i in outMatrix:
+	out.write(i)
