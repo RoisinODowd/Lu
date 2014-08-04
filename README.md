@@ -1,8 +1,8 @@
 #Usage:
 
-#####**reducer.py**: used to find all common tumors between transposed mutation, expression, and CNA data and writes the common tumors to OutputFile.
+#####**reducer.py**: used to find all common tumors between transposed expression and CNA data and writes the common tumors to OutputFile.
 ```
-python reducer.py [MUTATIONS] [EXPRESSIONS (IlluminaHiSeq)] [CNA] [OutputFile]
+python reducer.py [EXPRESSIONS (IlluminaHiSeq)] [CNA] [OutputFile]
 ```
 #####**transpose.py**: takes in a matrix file where the rows are genes and the columns are tumors and transposes the file
 ```

@@ -3,8 +3,8 @@ import sys
 """
 Improper argument handling
 """
-if len(sys.argv) != 5:
-	sys.stderr.write("The proper usage of this program is 'python reducer.py [MUTATIONS] [EXPRESSIONS] [CNA] [OutputFile]'\n")
+if len(sys.argv) != 4:
+	sys.stderr.write("The proper usage of this program is 'python reducer.py [EXPRESSIONS] [CNA] [OutputFile]'\n")
 	sys.exit()
 
 """
@@ -12,10 +12,8 @@ Opens multiple files via the command line.
 The mutation matrix is the first argument, the expression the second,
 and the CNA the third. The first line in each file is skipped.
 """
-mutFile = open(sys.argv[1], "r")
-expFile = open(sys.argv[2], "r")
-cnaFile = open(sys.argv[3], "r")
-next(mutFile)
+expFile = open(sys.argv[1], "r")
+cnaFile = open(sys.argv[2], "r")
 next(expFile)
 next(cnaFile)
 
@@ -27,8 +25,6 @@ mutList = ['Tumor1', 'Tumor2', ...]
 expList = ['Tumor1', 'Tumor2', ...]
 cnaList = ['Tumor1', 'Tumor2', ...]
 """
-for line in mutFile:
-	mutList.append(line.split("\t")[0])
 for line in expFile:
 	expList.append(line.split("\t")[0])
 for line in cnaFile:
@@ -41,7 +37,6 @@ mutSet = {'Tumor1', 'Tumor2', ...}
 expSet = {'Tumor1', 'Tumor2', ...}
 cnaSet = {'Tumor1', 'Tumor2', ...}
 """
-mutSet = set(mutList)
 expSet = set(expList)
 cnaSet = set(cnaList)
 
@@ -52,14 +47,14 @@ only the tumors common between all three files.
 
 commonSet = {'Tumor1', 'Tumor2', ...}
 """
-commonSet = mutSet.intersection(expSet).intersection(cnaSet)
+commonSet = expSet.intersection(cnaSet)
 
 """
 Opens the given argument as the output file and then prints out
 each tumor on a new line. The output is referred to as the 
 CommonTumors file.
 """
-with open(sys.argv[4], "w") as out:
+with open(sys.argv[3], "w") as out:
 	while len(commonSet) > 0:
 		temp = commonSet.pop()
 		if temp == "Sample":
@@ -69,7 +64,6 @@ with open(sys.argv[4], "w") as out:
 """
 Closing files
 """
-mutFile.close()
 expFile.close()
 cnaFile.close()
 out.close()
