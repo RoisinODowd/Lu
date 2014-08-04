@@ -23,6 +23,7 @@ cdfTumorDict, cdfGeneDict = {}, {}
 cnaTumorDict, cnaGeneDict = {}, {}
 cdfGeneList, cnaGeneList, tumorList = [], [], []
 
+
 """
 Read in the header of both files, which is all the genes,
 and then put all the genes into their respective lists.
@@ -93,6 +94,7 @@ cnaLine = [-1, -2, 1, 2,...]
 cdfLine = [0, 1, 1, 0, ...]
 """
 degList = []
+count = 0
 for i in cnaTumorDict:
 	tumorList.append(i)
 	tumorDEGList = [0] * len(commonGeneList)
@@ -103,6 +105,7 @@ for i in cnaTumorDict:
 		cnaIndex = cnaGeneDict[gene]
 		if abs(int(cnaLine[cnaIndex+1])) == 2 and int(cdfLine[cdfIndex+1]) == 1:
 			tumorDEGList[commonGeneList.index(gene)] = 1
+			count += 1
 	degList.append(tumorDEGList)
 
 """
@@ -118,3 +121,4 @@ for i in range(len(degList)):
 	for j in degList[i]:
 		out.write(str(j) + "\t")
 	out.write("\n")
+print count
