@@ -19,7 +19,7 @@ python annotation.py [CommonTumors]
 python cdfMaker.py [NormalMatrix] [TumorMatrix] [OutputFile]
 ```
 
-#####**cnaExpExtractor.py**: takes in three files, two transposed matrix files: CNA matrix and Expression Matrix, and one common tumor list, and outputs two files that are the common tumors between the CNA and Expression matrices
+#####**cnaExpExtractor.py**: takes in three files, which are two transposed matrix files: CNA matrix and Expression Matrix. It also takes in one common tumor list, and outputs two files that are the common tumors between the CNA and Expression matrices
 ```
 python cnaExpExtractor.py [CNA] [EXPRESSIONS] [CommonTumors] [OutputCNA] [OutputExpression]
 ```
